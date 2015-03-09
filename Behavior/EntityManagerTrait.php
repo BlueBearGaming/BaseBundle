@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueBear\CoreBundle\Entity\Behavior;
+namespace BlueBear\BaseBundle\Behavior;
 
 use Doctrine\ORM\EntityManagerInterface;
 

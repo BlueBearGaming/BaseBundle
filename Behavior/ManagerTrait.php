@@ -2,7 +2,6 @@
 
 namespace BlueBear\BaseBundle\Behavior;
 
-use BlueBear\CoreBundle\Entity\Behavior\EntityManagerTrait;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\ORMException;
