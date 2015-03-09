@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-0": {
-      "BlueBear\\AdminBundle": ""
+      "BlueBear\\BaseBundle": ""
     }
   },
   "target-dir": "BlueBear/BaseBundle"
