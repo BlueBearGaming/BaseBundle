@@ -3,7 +3,7 @@
   "type": "symfony-bundle",
   "description": "Base bundle for Symfony2",
   "keywords": ["Base", "Shortcut", "Symfony2"],
-  "homepage": "https://github.com/BlueBear/BaseBundle",
+  "homepage": "https://github.com/CleverGaming/BaseBundle",
   "license": "MIT",
   "authors": [
     {
