@@ -8,7 +8,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\ORMException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-trait ManagerBehavior
+trait ManagerTrait
 {
     use ContainerTrait, EntityManagerTrait;
 
