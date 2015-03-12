@@ -25,7 +25,8 @@ class UtilsExtension extends Twig_Extension
     {
         return [
             new Twig_SimpleFunction('isCurrentRoute', [$this, 'isCurrentRoute']),
-            new Twig_SimpleFunction('getClassForRoute', [$this, 'getClassForRoute'])
+            new Twig_SimpleFunction('getClassForRoute', [$this, 'getClassForRoute']),
+            new Twig_SimpleFunction('createArrayKey', [$this, 'createArrayKey'])
         ];
     }
 
@@ -53,6 +54,13 @@ class UtilsExtension extends Twig_Extension
     public function getClassForRoute($route, $cssClass = 'active')
     {
         return ($this->isCurrentRoute($route)) ? $cssClass : '';
+    }
+
+    public function createArrayKey($key, $value = null, array $array = [])
+    {
+        $array[$key] = $value;
+
+        return $array;
     }
 
     public function getName()
