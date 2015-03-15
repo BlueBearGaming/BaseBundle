@@ -27,7 +27,7 @@ trait ControllerTrait
      * @param Exception $previous
      * @return NotFoundHttpException
      */
-    public abstract function createNotFoundException($message = 'Not Found', Exception $previous = NULL);
+    public abstract function createNotFoundException($message = 'Not Found', Exception $previous = null);
 
     /**
      * Abstract generate url method. Should return a url string
