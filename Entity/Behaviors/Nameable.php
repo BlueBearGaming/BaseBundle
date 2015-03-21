@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueBear\CoreBundle\Entity\Behaviors;
+namespace BlueBear\BaseBundle\Entity\Behaviors;
 
 /**
  * Nameable
