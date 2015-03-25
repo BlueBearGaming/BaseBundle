@@ -1,13 +1,3 @@
 # symfony
 composer.phar
 vendor
-
-# IDE
-.idea
-
-# kde, apple
-.ds_store
-.directory
-
-# sass
-.sass-cache

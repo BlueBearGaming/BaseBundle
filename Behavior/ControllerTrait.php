@@ -17,6 +17,8 @@ use Symfony\Component\Translation\TranslatorInterface;
  * ControllerTrait
  *
  * Helper trait for Symfony controllers
+ *
+ * @property ContainerInterface $container
  */
 trait ControllerTrait
 {
@@ -166,4 +168,4 @@ trait ControllerTrait
     {
         $this->container = $container;
     }
-} 
+}

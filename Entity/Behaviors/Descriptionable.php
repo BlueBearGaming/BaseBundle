@@ -30,4 +30,4 @@ trait Descriptionable
     {
         return $this->description;
     }
-} 
+}
