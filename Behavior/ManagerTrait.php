@@ -100,11 +100,24 @@ trait ManagerTrait
      * @param $arguments
      * @return null|object
      */
-    public function findOneBy($arguments)
+    public function findOneBy(array $arguments)
     {
         return $this
             ->getRepository()
             ->findOneBy($arguments);
+    }
+
+    /**
+     * Return entities by criteria
+     *
+     * @param $arguments
+     * @return array
+     */
+    public function findBy(array $arguments)
+    {
+        return $this
+            ->getRepository()
+            ->findBy($arguments);
     }
 
     /**

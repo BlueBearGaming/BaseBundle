@@ -56,14 +56,15 @@ trait ControllerTrait
      * Redirect response to an url or a route
      *
      * @param string $url
+     * @param array $parameters
      * @param int $status
      * @return RedirectResponse
      */
-    public function redirect($url, $status = 302)
+    public function redirect($url, $parameters = [], $status = 302)
     {
         if (substr($url, 0, 1) == '@') {
             $route = substr($url, 1);
-            $url = $this->generateUrl($route);
+            $url = $this->generateUrl($route, $parameters);
         }
         return new RedirectResponse($url, $status);
     }
