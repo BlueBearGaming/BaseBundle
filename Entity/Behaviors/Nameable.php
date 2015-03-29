@@ -35,4 +35,4 @@ trait Nameable
     {
         $this->name = $name;
     }
-} 
+}

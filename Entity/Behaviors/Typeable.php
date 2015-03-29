@@ -36,4 +36,4 @@ trait Typeable
     {
         $this->type = $type;
     }
-} 
+}

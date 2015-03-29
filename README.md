@@ -31,3 +31,4 @@ ControllerTrait has following methods :
 * __forward404Unless($condition, $message = '404 Not Found')__ : Forward current request to a 404 page if $condition is false
 * __redirect($url, $status = 302)__ : Redirect to an url or a route (for route use "@my_route")
 * __setMessage($message, $type = 'info', $parameters = [])__ : Add a flash message with a type and translations parameters
+
