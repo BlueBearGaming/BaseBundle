@@ -147,11 +147,13 @@ trait ControllerTrait
      *
      * @param $string
      * @param array $parameters
+     * @param string $domain
+     * @param string $locale
      * @return string
      */
-    protected function translate($string, $parameters = array())
+    protected function translate($string, $parameters = [], $domain = null, $locale = null)
     {
-        return $this->getTranslator()->trans($string, $parameters);
+        return $this->getTranslator()->trans($string, $parameters, $domain, $locale);
     }
 
     /**

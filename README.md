@@ -3,7 +3,7 @@ BaseBundle for Symfony2 projects. This bundle contains some shortcuts and code s
 
 # Installation
 ```
-php composer.phar require white-october/pagerfanta-bundle
+php composer.phar require bluebear/basebundle
 ```
 
 # Getting started
@@ -21,7 +21,7 @@ class MyController extends Controller {
     
     ...
 ```
-Your controller should have following methods :
+Your controller should have following methods (those methods are native in Symfony controller):
 ```php
 public function createNotFoundException($message = 'Not Found', Exception $previous = null)
 public function generateUrl($route, $parameters = array(), $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH) 
@@ -31,4 +31,11 @@ ControllerTrait has following methods :
 * __forward404Unless($condition, $message = '404 Not Found')__ : Forward current request to a 404 page if $condition is false
 * __redirect($url, $status = 302)__ : Redirect to an url or a route (for route use "@my_route")
 * __setMessage($message, $type = 'info', $parameters = [])__ : Add a flash message with a type and translations parameters
+* __getConfig($key)__ : Return configuration key $key from container parameters
+* __getRouting()__ : Return router service
+* __getTranslator()__ : Return translator service
+* __getSession()__ : Return session service
+* __getEventDispatcher()__ : Return event dispatcher service
+* __getEntityManager()__ : Return entity manager service
+* __translate($string, $parameters = [])__ : Return entity manager service
 
