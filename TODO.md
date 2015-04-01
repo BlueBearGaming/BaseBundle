@@ -4,4 +4,3 @@
 > add entity behavior
 > add preExecute listener
 > rename setMessage into addMessage ?
-> passing SensioLabsInsight test

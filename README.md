@@ -21,7 +21,7 @@ class MyController extends Controller {
     
     ...
 ```
-Your controller should have following methods (those methods are native in Symfony controller):
+Your controller should have following methods (those methods are native in Symfony Controller):
 ```php
 public function createNotFoundException($message = 'Not Found', Exception $previous = null)
 public function generateUrl($route, $parameters = array(), $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH) 
@@ -39,3 +39,18 @@ ControllerTrait has following methods :
 * __getEntityManager()__ : Return entity manager service
 * __translate($string, $parameters = [])__ : Return entity manager service
 
+## ContainerTrait
+ContainerTrait has following methods :
+
+* __getContainer()__ : Return Container service
+* __setContainer()__ : Set Container service 
+
+## EntityManagerTrait
+EntityManagerTrait has following methods :
+
+* __getEntityManager()__ : Return EntityManager service
+* __setEntityManager()__ : Set EntityManager service 
+
+## ManagerTrait
+
+...
