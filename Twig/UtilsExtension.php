@@ -17,20 +17,6 @@ class UtilsExtension extends Twig_Extension
     use ContainerTrait;
 
     /**
-     * Return twig methods
-     *
-     * @return array
-     */
-    public function getFunctions()
-    {
-        return [
-            new Twig_SimpleFunction('isCurrentRoute', [$this, 'isCurrentRoute']),
-            new Twig_SimpleFunction('getClassForRoute', [$this, 'getClassForRoute']),
-            new Twig_SimpleFunction('createArrayKey', [$this, 'createArrayKey'])
-        ];
-    }
-
-    /**
      * Return true if $route is the current route
      *
      * @param $route
@@ -56,6 +42,33 @@ class UtilsExtension extends Twig_Extension
         return ($this->isCurrentRoute($route)) ? $cssClass : '';
     }
 
+    /**
+     * Append a named value in request query string
+     *
+     * @param Request $request
+     * @param $name
+     * @param $value
+     * @return string
+     */
+    public function appendToQueryString(Request $request, $name, $value)
+    {
+        $queryString = '?';
+        $query = $request->query->all();
+        $query[$name] = $value;
+        $parametersCount = count($query);
+        $count = 1;
+
+        foreach ($query as $parameterName => $parameterValue) {
+            $queryString .= $parameterName . '=' . $parameterValue;
+
+            if ($count != $parametersCount) {
+                $queryString .= '&';
+            }
+            $count++;
+        }
+        return $queryString;
+    }
+
     public function createArrayKey($key, $value = null, array $array = [])
     {
         $array[$key] = $value;
@@ -63,8 +76,23 @@ class UtilsExtension extends Twig_Extension
         return $array;
     }
 
+    /**
+     * Return twig methods
+     *
+     * @return array
+     */
+    public function getFunctions()
+    {
+        return [
+            new Twig_SimpleFunction('isCurrentRoute', [$this, 'isCurrentRoute']),
+            new Twig_SimpleFunction('getClassForRoute', [$this, 'getClassForRoute']),
+            new Twig_SimpleFunction('createArrayKey', [$this, 'createArrayKey']),
+            new Twig_SimpleFunction('appendToQueryString', [$this, 'appendToQueryString'])
+        ];
+    }
+
     public function getName()
     {
-        return 'bluebear_extension';
+        return 'bluebear_base_extension';
     }
 }
