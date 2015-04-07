@@ -23,7 +23,7 @@
     "php": ">=5.4",
     "symfony/symfony": "2.6.*",
     "sensio/framework-extra-bundle": "~3.0",
-    "doctrine/orm": "~2.2,>=2.2.3"
+    "doctrine/orm": "master"
   },
   "autoload": {
     "psr-0": {
