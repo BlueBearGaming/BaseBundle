@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueBear\BaseBundle\Entity\Behavior;
+namespace BlueBear\BaseBundle\Entity\Behaviors;
 
 use DateTime;
 
