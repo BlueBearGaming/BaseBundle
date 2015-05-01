@@ -20,11 +20,16 @@ trait Timestampable
 
     /**
      * @ORM\PrePersist()
+     * @param null $createdAt
      * @return $this
      */
-    public function setCreatedAt()
+    public function setCreatedAt($createdAt = null)
     {
-        $this->createdAt = new DateTime();
+        if ($createdAt) {
+            $this->createdAt = $createdAt;
+        } else {
+            $this->createdAt = new DateTime();
+        }
         return $this;
     }
 
