@@ -25,10 +25,11 @@ trait Timestampable
      */
     public function setCreatedAt($createdAt = null)
     {
-        if ($createdAt) {
+        if (!$createdAt) {
+            $createdAt = new DateTime();
+        }
+        if (!$this->createdAt) {
             $this->createdAt = $createdAt;
-        } else {
-            $this->createdAt = new DateTime();
         }
         return $this;
     }
