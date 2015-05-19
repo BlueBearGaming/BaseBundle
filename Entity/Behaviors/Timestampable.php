@@ -20,18 +20,24 @@ trait Timestampable
 
     /**
      * @ORM\PrePersist()
-     * @param null $createdAt
      * @return $this
      */
-    public function setCreatedAt($createdAt = null)
+    public function setCreatedAt()
     {
-        if (!$createdAt) {
-            $createdAt = new DateTime();
-        }
         if (!$this->createdAt) {
-            $this->createdAt = $createdAt;
+            $this->createdAt = new DateTime();
         }
-        return $this;
+    }
+
+    /**
+     * Created at cannot be set. But in some case (like imports...), it is required to set created at. Use this method
+     * in this case
+     *
+     * @param DateTime $createdAt
+     */
+    public function forceCreatedAt(DateTime $createdAt)
+    {
+        $this->createdAt = $createdAt;
     }
 
     /**
