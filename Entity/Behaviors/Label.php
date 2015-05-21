@@ -27,7 +27,7 @@ trait Label
      *
      * @param string $label
      */
-    public function setId($label)
+    public function setLabel($label)
     {
         $this->label = $label;
     }
