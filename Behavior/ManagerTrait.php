@@ -5,7 +5,6 @@ namespace BlueBear\BaseBundle\Behavior;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\ORMException;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 trait ManagerTrait
 {
@@ -22,7 +21,7 @@ trait ManagerTrait
      * Return a service by its id
      *
      * @param $service
-     * @return ContainerInterface
+     * @return object
      */
     public function get($service)
     {
