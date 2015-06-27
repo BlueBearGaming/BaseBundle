@@ -31,4 +31,16 @@ trait ContainerTrait
     {
         $this->container = $container;
     }
+
+    /**
+     * Gets a service
+     *
+     * @param string $serviceId
+     * @param int $invalidBehavior
+     * @return object
+     */
+    public function get($serviceId, $invalidBehavior = ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE)
+    {
+        return $this->container->get($serviceId, $invalidBehavior);
+    }
 }
