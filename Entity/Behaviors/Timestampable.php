@@ -51,11 +51,16 @@ trait Timestampable
     /**
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
+     * @param null $value
      * @return $this
      */
-    public function setUpdatedAt()
+    public function setUpdatedAt($value = null)
     {
-        $this->updatedAt = new DateTime();
+        if ($value) {
+            $this->updatedAt = $value;
+        } else {
+            $this->updatedAt = new DateTime();
+        }
         return $this;
     }
 
