@@ -43,6 +43,25 @@ class UtilsExtension extends Twig_Extension
     }
 
     /**
+     * Return $cssClass ("active" by default) if one route in $routes is current route
+     *
+     * @param array $routes
+     * @param string $cssClass
+     * @return string
+     */
+    public function getClassForRoutes(array $routes, $cssClass = 'active')
+    {
+        $classes = [];
+
+        foreach ($routes as $route) {
+            $classes[] = $this->getClassForRoute($route, $cssClass);
+        }
+        $classes = array_unique($classes);
+
+        return implode(' ', $classes);
+    }
+
+    /**
      * Append a named value in request query string
      *
      * @param Request $request
@@ -86,6 +105,7 @@ class UtilsExtension extends Twig_Extension
         return [
             new Twig_SimpleFunction('isCurrentRoute', [$this, 'isCurrentRoute']),
             new Twig_SimpleFunction('getClassForRoute', [$this, 'getClassForRoute']),
+            new Twig_SimpleFunction('getClassForRoutes', [$this, 'getClassForRoutes']),
             new Twig_SimpleFunction('createArrayKey', [$this, 'createArrayKey']),
             new Twig_SimpleFunction('appendToQueryString', [$this, 'appendToQueryString'])
         ];
