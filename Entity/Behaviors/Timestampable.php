@@ -56,7 +56,7 @@ trait Timestampable
      */
     public function setUpdatedAt($value = null)
     {
-        if ($value) {
+        if ($value instanceof DateTime) {
             $this->updatedAt = $value;
         } else {
             $this->updatedAt = new DateTime();
